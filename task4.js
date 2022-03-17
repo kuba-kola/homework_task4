@@ -12,6 +12,13 @@ function myFilter (arr, callback, thisArg) {
     return filteredArr;
 }
 
-function myReducer (arr, callback, start) {
+function myReducer (arr, callback, initialValue) {
+    let res = initialValue;
+
+    for (let i = 0; i < arr.length; i++) {
+        let res = callback.call(res, arr[i], i, arr);
+    }
+    
+    return res;
 
 }
