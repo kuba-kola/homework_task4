@@ -2,9 +2,9 @@ function myFilter (arr, callback, thisArg) {
     const filteredArr = [];
   
     for (let i = 0; i < arr.length; i++) {
-        const thisCallback = callback.call(thisArg, arr[i], i, arr);
+        const thisCallbackRes = callback.call(thisArg, arr[i], i, arr);
 
-        if (thisCallback) {
+        if (thisCallbackRes) {
             filteredArr.push(arr[i]);
         }
     }
@@ -20,5 +20,4 @@ function myReducer (arr, callback, initialValue) {
     }
     
     return res;
-
 }
